@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio TKJ | Pro Proyek</title>
+    <!-- Font Google untuk tampilan modern -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        /* --- RESET & VARIABEL --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --gradasi: linear-gradient(135deg, #ff758c 0%, #ff7eb3 20%, #7000ff 100%);
+            --pink: #ff7eb3;
+            --ungu: #7000ff;
+            --gelap: #0f0c1b;
+            --kartu: rgba(255, 255, 255, 0.05);
+            --teks-terang: #ffffff;
+            --teks-redup: #b3b3cc;
+        }
+
+        body {
+            background-color: var(--gelap);
+            color: var(--teks-terang);
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGASI --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 8%;
+            background: rgba(15, 12, 27, 0.85);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 117, 140, 0.1);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradasi);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--teks-redup);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--pink);
+        }
+
+        /* --- SECTION BASE --- */
+        section {
+            padding: 100px 8% 80px 8%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradasi);
+            border-radius: 2px;
+        }
+
+        /* --- 1. HERO SECTION --- */
+        #home {
+            text-align: center;
+            background: radial-gradient(circle at 80% 20%, rgba(112, 0, 255, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 10% 80%, rgba(255, 117, 140, 0.15) 0%, transparent 50%);
+        }
+
+        .badge {
+            background: var(--gradasi);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        #home h1 span {
+            background: var(--gradasi);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #home p {
+            color: var(--teks-redup);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradasi);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(112, 0, 255, 0.4);
+        }
+
+        /* --- 2. TENTANG SAYA --- */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--pink);
+        }
+
+        .about-text p {
+            color: var(--teks-redup);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .tkj-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-box {
+            background: var(--kartu);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--ungu);
+        }
+
+        .info-box h4 { margin-bottom: 5px; color: white; }
+        .info-box p { font-size: 0.9rem; margin-bottom: 0; }
+
+        /* --- 3. KEAHLIAN (SKILLS) --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: var(--kartu);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--pink);
+            box-shadow: 0 10px 20px rgba(255, 117, 140, 0.05);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 { margin-bottom: 10px; font-size: 1.3rem; }
+        .skill-card p { color: var(--teks-redup); font-size: 0.9rem; line-height: 1.6; }
+
+        /* --- 4. PROYEK / PORTOFOLIO --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--kartu);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Simulasi visual hardware/jaringan menggunakan CSS Gradasi */
+        .project-banner {
+            height: 180px;
+            background: linear-gradient(45deg, #201a30, #0f0c1b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-bottom: 3px solid var(--ungu);
+        }
+
+        .project-info { padding: 25px; }
+        .project-tag {
+            font-size: 0.75rem;
+            background: rgba(112, 0, 255, 0.2);
+            color: #cbb3ff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .project-info h3 { margin-bottom: 10px; }
+        .project-info p { color: var(--teks-redup); font-size: 0.9rem; line-height: 1.6; }
+
+        /* --- 5. LAYANAN & KONTAK --- */
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--kartu);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 117, 140, 0.1);
+            text-align: center;
+        }
+
+        .contact-container p {
+            color: var(--teks-redup);
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background: var(--gradasi);
+            border-color: transparent;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--teks-redup);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* --- RESPONSIVITAS MOBILE --- */
+        @media (max-width: 768px) {
+            nav { padding: 15px 5%; }
+            .nav-links { display: none; } /* Menyembunyikan menu pada layar HP untuk kesederhanaan */
+            section { padding: 80px 5% 60px 5%; }
+            #home h1 { font-size: 2.5rem; }
+            .about-container { grid-template-columns: 1fr; gap: 30px; }
+            .section-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGASI -->
+    <nav>
+        <div class="logo">PORTFOLIO.TKJ</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#projects">Proyek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section id="home">
+        <div>
+            <div class="badge">Siswa Teknik Komputer & Jaringan</div>
+            <h1>Halo, Saya <span>[Nama Anda]</span></h1>
+            <p>Spesialis junior di bidang Infrastruktur Jaringan, Administrasi Server, dan Troubleshooting Perangkat Keras Komputer.</p>
+            <a href="#projects" class="btn">Lihat Portofolio</a>
+        </div>
+    </section>
+
+    <!-- 2. TENTANG SAYA SECTION -->
+    <section id="about">
+        <h2 class="section-title">Tentang Saya</h2>
