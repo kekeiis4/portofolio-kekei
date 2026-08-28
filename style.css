@@ -1,0 +1,250 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FFFDF0; /* Yellow Butter (Latar Belakang Utama) */
+    color: #4A4A4A; /* Warna teks gelap yang lembut agar nyaman dibaca */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #FFF9D6; /* Gelap sedikit dari Yellow Butter */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #4A4A4A;
+}
+
+.navbar .logo span {
+    color: #FFB7B2; /* Pink Pastel */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #7D7D7D;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #FFB7B2; /* Pink Pastel */
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Background menggunakan gradasi warna pastel yang estetik */
+    background: linear-gradient(135deg, #FFFDF0 0%, #FFE5E5 100%); 
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.hero-content .highlight {
+    color: #FFB7B2; /* Pink Pastel */
+    background-color: #FFF5C0; /* Sorotan Kuning Lembut */
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #FFB7B2; /* Pink Pastel */
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 25px; /* Tombol bulat lebih estetik */
+    transition: transform 0.3s, background 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 183, 178, 0.4);
+}
+
+.btn:hover {
+    background-color: #FFA29A;
+    transform: translateY(-2px);
+}
+
+/* Section Umum */
+section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    color: #333333;
+}
+
+section h2::after {
+    content: '';
+    width: 60%;
+    height: 4px;
+    background-color: #FFB7B2; /* Garis bawah Pink Pastel */
+    position: absolute;
+    bottom: -10px;
+    left: 20%;
+    border-radius: 2px;
+}
+
+/* About Section */
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555555;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    border-bottom: 5px solid transparent;
+    transition: transform 0.3s, border-color 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #FFB7B2; /* Pink Pastel saat di-hover */
+}
+
+.skill-card h3 {
+    margin-bottom: 15px;
+    color: #333333;
+}
+
+.skill-card p {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    width: 450px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+    border-left: 5px solid #FFF5C0; /* Aksen Kuning Mentega di samping */
+}
+
+.project-card h3 {
+    color: #FFB7B2; /* Judul proyek Pink Pastel */
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* Contact Section */
+.contact p {
+    margin-bottom: 25px;
+    color: #555555;
+}
+
+.btn-contact {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid #FFB7B2;
+    color: #FFB7B2;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.btn-contact:hover {
+    background-color: #FFB7B2;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 183, 178, 0.4);
+}
+
+/* Footer */
+footer {
+    background-color: #FFF9D6;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #FFE5E5;
+    font-size: 14px;
+    color: #888888;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        justify-content: center;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .project-card {
+        width: 100%;
+    }
+}
